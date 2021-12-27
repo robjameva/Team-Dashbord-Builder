@@ -1,13 +1,13 @@
 const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
-    describe('create new object', () => {
+    let rob;
 
-        let rob;
+    beforeEach(() => {
+        rob = new Employee('robert', 1, 'rob@gmail.com')
+    })
 
-        beforeEach(() => {
-            rob = new Employee('robert', 1, 'rob@gmail.com')
-        })
+    describe('create new employee object', () => {
 
         it('should create a new employee object', () => {
 
