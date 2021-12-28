@@ -12,7 +12,7 @@ const writeHTML = (content) => {
                 ok: true,
                 message: 'file created'
             });
-            console.log('README generated! Please open the output folder to see your new README.md file')
+            console.log('Team Page generated! Please open the dist folder to see your new HTML file')
         });
     });
 };
