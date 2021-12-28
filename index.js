@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
-const { initQuestions, engineerQuestions, internQuestions } = require('./src/questions')
+const { initQuestions, engineerQuestions, internQuestions } = require('./src/questions');
+const generateHTML = require('./src/generateHTML');
+const writeHTML = require('./src/writeHTML')
 
 const init = () => {
     return inquirer.prompt(initQuestions);
@@ -17,8 +19,7 @@ const promptEngineer = projectData => {
             } else if (newEngineerData.addEmployee === 'Intern') {
                 promptIntern(projectData);
             } else {
-                console.log(projectData);
-                return projectData;
+                writeHTML(generateHTML(projectData));
             }
         })
 }
@@ -35,8 +36,7 @@ const promptIntern = projectData => {
             } else if (newInternData.addEmployee === 'Engineer') {
                 promptEngineer(projectData);
             } else {
-                console.log(projectData);
-                return projectData;
+                writeHTML(generateHTML(projectData));
             }
         })
 }
@@ -48,7 +48,6 @@ init()
         } else if (data.addEmployee === "Intern") {
             promptIntern(data)
         } else {
-            console.log(data)
-            return data
+            writeHTML(generateHTML(data));
         }
     })
