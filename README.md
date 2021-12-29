@@ -1,4 +1,4 @@
-# Team Profile Generator
+# Team Dashboard Builder
 
 ## Description 
 
